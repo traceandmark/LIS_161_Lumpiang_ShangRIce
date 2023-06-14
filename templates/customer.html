@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/itemlist.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}"/>
+<style>
+  * {
+      color: #6f0c0c;
+  }
+      .chip {
+        display: inline-block;
+        padding: 0 25px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        border-radius: 25px;
+        background-color: #f1f1f1;
+        margin: 5px;
+      }
+      
+      .chip img {
+        margin: 0 10px 0 -25px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+
+      
+
+      /* Create two equal columns that floats next to each other */
+      .column {
+          float: left;
+          width: 25%;
+          padding: 10px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+
+    </style>
+<div class ="form"></div>
+
+<br><center>
+<h1 class="pagetitle">List of Sales for <br> {{ customer }}</h1>
+<br>
+<br>
+
+<table>
+  <tr>
+    <th>Order Date</th>
+    <th>Flavor</th>
+    <th>Quantity</th>
+    <th>Total Price</th>
+    <th>Rating</th>
+    <th>Feedback</th>
+    <th>Image URl</th>
+    <th></th>
+  </tr>
+{% for LSR in LSRs %}
+  <tr>
+    <td> <a href="/LumpiangShangRice/sales/date/{{ LSR.date }}">{{ LSR.date }}</a> </td>
+    <td><a href="/LumpiangShangRice/sales/{{ LSR.flavor }}">{{ LSR.flavor }} </td>
+    <td> {{ LSR.quantity }} </td>
+    <td> {{ LSR.price }} </td>
+    <td>  <a href="/LumpiangShangRice/sales/rate/{{ LSR.rate }}">{{ LSR.rate }}</a> </td>
+    <td> {{ LSR.feedback }} </a></td>
+    <td> {{ LSR.url }} </td>
+    <td>     <a href="/LumpiangShangRice/{{ LSR.id }}"> View </a></td>
+
+  </tr>
+
+{% endfor %}
+</table>
+<br>
+<br>
+<a class="normalref" href="{{ url_for('sales_database') }}"><button class="button" onclick="myFunction()">Back to Sales Database</button></a>
+</center>
+  <br>
+  <br>
+  <br>
+  <div class ="form"></div>
+  <br>
+  <center>
+      <h1 class="pageh1">List of Customer Sales</h1>
+  </center>
+      <br>
+      <br>
+
+
+          {% set myList = [] %}
+          {% for d in data %}
+              {% if d.customer not in myList %}
+                  <a href="/LumpiangShangRice/sales/customer/{{ d.customer }}">
+                      <div class="chip">
+                          <img src="{{ d.url }}" alt="Person" width="96" height="96">
+                          {{ d.customer }}
+                      </div>
+                  </a>
+                  {{ myList.append( d.customer ) }}
+              {% endif %}
+
+          {% endfor %}
+          <br>
+          <br>
+          <br>
+
+
+
+{% endblock %}

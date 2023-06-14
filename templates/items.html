@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/itemlist.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}"/>
+<div class ="form"></div>
+<br>
+<<center>
+    <h1 class="pagetitle">List of Inventory for {{ item }}</h1>
+    <br>
+    <br>
+    
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Stock</th>
+        <th>Item Unit</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+        <th></th>
+      </tr>
+    {% for INV in INVs %}
+      <tr>
+        <td> {{ INV.item }} </td>
+        <td> {{ INV.description }} </td>
+        <td> {{ INV.stock }} </td>
+        <td> {{ INV.unit }} </td>
+        <td> {{ INV.amount }} </td>
+        <td> {{ INV.total }} </td>
+        <td>     <a href="/Lumpiang/{{ INV.invid }}"> View </a></td>
+    
+      </tr>
+    
+    {% endfor %}
+    </table>
+    <br>
+    <br>
+    <a class="normalref" href="{{ url_for('inventory_database') }}"><button class="button" onclick="myFunction()">Back to Inventory Database</button></a>
+</center>
+  <br>
+  <br>
+  <div class="iresponsive">
+    <div class="gallery">
+      <a href="/LumpiangShangRice/inventory/ingredients">
+        <img src="{{ url_for('static', filename='images/ingredients.jpg') }}" alt="Ingredients" width="600" height="400">
+      </a>
+      <div class="desc">Ingredients Inventory</div>
+    </div>
+  </div>
+  
+  
+  <div class="iresponsive">
+    <div class="gallery">
+      <a href="/LumpiangShangRice/inventory/packaging">
+        <img src="{{ url_for('static', filename='images/packaging.jpg') }}" alt="Packaging" width="600" height="400">
+      </a>
+      <div class="desc">Packaging Inventory</div>
+    </div>
+    <br>
+  </div>
+  <br>
+  <br>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+
+<style>
+    
+h1, h2, h3, h4, h5 {
+    font-family: "Playfair Display";
+    font-size: 24px;
+}
+
+</style>
+
+<body>  
+
+<div class="vertical">
+<center>
+    <br>
+    <h1 class="pagetitle">Inventory Item View</h1>
+    <br>
+    <br>
+    <h1 class="pageh1">{{ INV.item }}</h1>
+    <br>
+    <div class="pageh1">
+        <h2>Type: {{ INV.type}}</h1>
+        <h2>Description: {{ INV.description }} </h2>
+        <h3>Unit of the Item: {{ INV.unit }}</h3>
+        <h3>Stock Quantity: {{ INV.stock }} </h2>
+        <h3>Unit Price: {{ INV.amount }} </h3>
+        <h3>Total Price: {{ INV.total }}</h3>
+    </div>
+    <form action="{{ url_for('inv_modify', LSR_inv_id=INV.invid ) }}" method="post">
+        <input type="hidden" name="LSR_inv_id" value="{{ INV.invid }}">
+        <p>
+            <br>
+            <br>
+            <input class="btn btn-secondary button" type="submit" name="action" value="Edit"></input>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="btn btn-danger button" type="submit" name="action" value="Delete"></input>
+        </p>
+    </form>
+    <br>
+    <br>
+    <br>
+</center>
+</div>
+
+</body>
+
+{% endblock %}

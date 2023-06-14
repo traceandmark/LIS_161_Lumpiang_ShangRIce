@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}"/>
+
+  <div class ="form"></div>
+        <div class="row">
+          <div class="column">
+            <img src="{{ url_for('static', filename='images/shang1.jpg') }}" alt="Classic" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang2.jpg') }}" alt="Cheesy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang3.png') }}" alt="Spicy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang4.jpg') }}" alt="Spicy-Cheesy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/classic.png') }}" alt="Classic1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/cheesy.png') }}" alt="Cheesy1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/spicy.png') }}" alt="Spicy1" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="{{ url_for('static', filename='images/shang2.jpg') }}" alt="Cheesy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang3.png') }}" alt="Spicy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang4.jpg') }}" alt="Spicy-Cheesy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/classic.png') }}" alt="Classic1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/cheesy.png') }}" alt="Cheesy1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/spicy.png') }}" alt="Spicy1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang1.jpg') }}" alt="Classic" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="{{ url_for('static', filename='images/shang3.png') }}" alt="Spicy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang4.jpg') }}" alt="Spicy-Cheesy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/classic.png') }}" alt="Classic1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/cheesy.png') }}" alt="Cheesy1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/spicy.png') }}" alt="Spicy1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang1.jpg') }}" alt="Classic" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang2.jpg') }}" alt="Cheesy" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="{{ url_for('static', filename='images/classic.png') }}" alt="Classic1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/cheesy.png') }}" alt="Cheesy1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/spicy.png') }}" alt="Spicy1" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang1.jpg') }}" alt="Classic" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang2.jpg') }}" alt="Cheesy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang4.jpg') }}" alt="Spicy-Cheesy" style="width:100%">
+            <img src="{{ url_for('static', filename='images/shang3.png') }}" alt="Spicy" style="width:100%">
+          </div>
+        </div> 
+        <div class="bg-text"> 
+            <h2> <br> Welcome to Lumpiang ShangRice Database! </h2> 
+            <h3>   Feel free to explore this website to see how functionable it is! </h3> 
+            <p>
+              <br>
+              <a href="/LumpiangShangRice/form/sales"><button class="button">Enter Sales Data</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="/LumpiangShangRice/form/inventory"><button class="button">Enter Inventory Data</button></a><br><br>
+            </p>  
+        </div>
+{% endblock %}

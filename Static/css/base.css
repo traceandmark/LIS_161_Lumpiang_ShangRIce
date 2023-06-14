@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin-left: 15;
+    margin-right: 15;
+    font-family: "Playfair Display";
+    
+    }
+
+body {
+           background-color: #6f0c0c;
+           font-family:  "Playfair Display";
+        }
+.titlestyle{
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+        } 
+
+h1, h2, h3, h4, h5, p{
+    font-family: "Playfair Display";
+}
+    
+ul {
+    list-style: none;
+    background: #f18f0f;
+    }
+    
+ul li {
+    display: inline-block;
+    position: relative;
+    }
+    
+ul li a{
+    display: block;
+    padding: 25px 25px;
+    color: #a81c1c;
+    text-decoration: none;
+    text-align: center;
+    font-size:22px; 
+    font-weight: bold;
+    }
+ul li ul.dropdown li{
+    display: block;
+    
+    }
+    
+ul li ul.dropdown {
+    width: 125%;
+    padding: 10px 10px;
+    background: #f18f0fc9;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    }
+    
+ul li a:hover {
+    background: #6f0c0c
+    }
+    
+ul li:hover ul.dropdown {
+    display: block;
+    }
+    
+.nav {
+    display: inline;
+    font-family: 'Cursive';
+    background: #f18f0f;
+    width: 100%;
+    line-height: 60px;
+    }
+    
+.header {
+    float: left;
+    padding: 0px;
+    background: #f18f0f;
+    line-height: 80px;
+    }
+    
+.title {
+    float: left;
+    
+    }
+    
+.right {
+    text-align: right;
+    display: block;
+    margin-left: 10px;
+       }
+    
+.fix img{
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 5px;
+    }
+.Bname{
+    margin-top: 5px;
+    margin-left: 75px;
+    color: #a81c1c;
+    }
+
+.parent {
+    display: inline-block;
+    position: relative;
+    line-height: 30px;
+    background-color: #f18f0fc9;
+    border-right: #CCC 1px solid;
+    z-index: 2;
+    }
+    
+.parent a {
+    margin: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    background: #f18f0f;
+    }
+    
+.parent:hover>ul {
+    display: block;
+    position: absolute;
+    }
+    
+.child {
+    display: none;
+    }
+    
+.child li {
+    background-color: #f18f0fc9;
+    line-height: 30px;
+    border-bottom: #CCC 1px solid;
+    border-right: #CCC 1px solid;
+    width: 100%;
+    }
+    
+.child li a {
+    color: #000000;
+    }
+    
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    min-width: 10em;
+
+    background: #f18f0f;
+    }
+    
+ul ul ul {
+    left: 100%;
+    top: 0;
+    margin-left: 1px;
+    }
+    
+li:hover {
+    background-color: #95B4CA;
+    }
+    
+.parent li:hover {
+    background-color: #F0F0F0;
+    }
+    
+.expand {
+        font-size: 12px;
+        float: right;
+        margin-right: 5px;
+    }
+
+.vertical {
+    color: white;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #500909;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    background-color:#500909;
+    text-align: center;
+  }
+
+  .dropdown-btn {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFFFFF;
+    display: block;
+    transition: 0.3s;
+    background-color: #500909;
+    text-align: center;
+  }
+  
+  .sidenav a:hover, .dropdown-btn:hover  {
+    background-color: #a81c1c;
+    color: #000000;
+
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+.active {
+    background-color: #f18f0f;
+    color: white;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background-color: #500909;
+    width: 100%;
+    text-align: right;
+  }
+
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+
+  .pagetitle{
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        outline: none;
+        color: #6f0c0c;
+        background-color: white;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 9px 9px #999;
+        width:85%;
+        font-family: "Playfair Display";
+        font-size: 40px;
+        letter-spacing: 5px;
+      }
+
+      .pageh1{
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        outline: none;
+        color: #6f0c0c;
+        background-color: white;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 9px 9px #999;
+        width:35%;
+        font-family: "Playfair Display";
+        font-size: 30px;
+        letter-spacing: 1.5px;
+      }
+    
+      .pageh2{
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        outline: none;
+        color: #6f0c0c;
+        background-color: white;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 9px 9px #999;
+        width:85%;
+        font-family: "Playfair Display";
+        font-size: 30px;
+        letter-spacing: 1.5px;
+      }
+

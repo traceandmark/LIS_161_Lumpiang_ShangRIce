@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}"/>
+<div class ="form"></div>
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+      font-family: "Playfair Display";
+    }
+    
+
+    h1, h2, h3, h4, h5 {font-family: "Playfair Display";         font-size: 24px;}
+
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+    </head>
+    <body>
+    <center>
+        <br>
+        <h1 class="pagetitle">Customer Sales View</h1>
+        <br>
+        <br>
+        <h1 class="pageh1">{{ LSR.customer }}</h1>
+    </center>
+    
+    <div class="row">
+      <div class="column">
+        <center>
+
+            <br>
+            <div class="pageh2">
+                <img src="{{ LSR.url }}" alt="customer" style="width:50%; height: 400px;">
+             </div>
+            <br>
+        </center>
+      </div>
+      <div class="column" >
+
+        <center>
+<br>
+        <div class="pageh2">
+            <h1>Lumpiang ShangRice Flavor: {{ LSR.flavor }}</h1>
+            <h2>Contact Number: {{ LSR.contact }}</h2>
+            <h2>Date of Purchase: {{ LSR.date }} </h2>
+            <h2>Quantity: {{ LSR.quantity }} </h2>
+            <h2>Total Price: {{ LSR.price }} </h2>
+            <h2>Rating: {{ LSR.rate }}</h2>
+            <h2>Feedback or Suggestion: </h2>
+                <h3>{{ LSR.feedback }}</h3>
+        </div>
+        <br>
+
+        </center>
+      </div>
+    </div>
+    <center>
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <form action="{{ url_for('modify', LSR_id=LSR.id)}}" method="post">
+        <input type="hidden" name="LSR_id" value="{{ LSR.id }}">
+        <p>
+            <br>
+            <br>
+        <input class="btn btn-secondary button" type="submit" name="action" value="Edit"></input>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="btn btn-danger button" type="submit" name="action" value="Delete"></input>
+        </p>
+    
+    </form>
+</center>
+    <br>
+    <br>
+    <br>
+    </body>
+    
+
+
+{% endblock %}

@@ -1,0 +1,212 @@
+
+
+input[type=text],  input[type=number], input[type=url], input[type=tel], input[type=date], select {
+      width: 70%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      font-size: 25px;
+      text-align: center;
+    }
+
+textarea {
+       font-size: 25px;
+       text-align: center;
+    }
+
+input[type=submit] {
+  padding: 15px 25px;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #f18f0f;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+input[type=submit]hover {
+  background-color: #c7770f
+}
+
+input[type=submit]active {
+  background-color: #d7800e;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.form {
+        color: white;
+        text-align: center;
+        font-size: 25px;
+    }
+
+.button {
+      padding: 15px 25px;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #ffffff;
+      background-color: #f18f0f;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+      
+    }
+    
+.button:hover {
+      background-color: #a81c1c;
+      color: black;
+    }
+    
+.button:active {
+      background-color: #d7800e;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  
+.rightbutton {
+      padding: 15px 25px;
+      font-size: 24px;
+      text-align: right;
+      cursor: pointer;
+      float: right;
+      outline: none;
+      color: #ffffff;
+      background-color: #f18f0f;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+      
+    }
+    
+.rightbutton:hover {
+      background-color: #a81c1c;
+      color: black;
+    }
+    
+.rightbutton:active {
+      background-color: #d7800e;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  
+    #pop_up {
+      visibility: hidden;
+      min-width: 250px;
+      margin-left: -125px;
+      background-color: #a81c1c;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      bottom: 30px;
+      font-size: 17px;
+    }
+    
+    #pop_up.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    
+    @-webkit-keyframes fadein {
+      from {bottom: 0; opacity: 0;} 
+      to {bottom: 30px; opacity: 1;}
+    }
+    
+    @keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 30px; opacity: 1;}
+    }
+    
+    @-webkit-keyframes fadeout {
+      from {bottom: 30px; opacity: 1;} 
+      to {bottom: 0; opacity: 0;}
+    }
+    
+    @keyframes fadeout {
+      from {bottom: 30px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+  }
+  .rate {
+      float: center;
+      height: 46px;
+      padding: 0 10px;
+  }
+  .rate:not(:checked) > input {
+      position:absolute;
+      top:-9999px;
+  }
+  .rate:not(:checked) > label {
+      float:right;
+      width:1em;
+      overflow:hidden;
+      white-space:nowrap;
+      cursor:pointer;
+      font-size:30px;
+      color:#ccc;
+  }
+  .rate:not(:checked) > label:before {
+      content: '★ ';
+  }
+  .rate > input:checked ~ label {
+      color: #ffc700;    
+  }
+  .rate:not(:checked) > label:hover,
+  .rate:not(:checked) > label:hover ~ label {
+      color: #deb217;  
+  }
+  .rate > input:checked + label:hover,
+  .rate > input:checked + label:hover ~ label,
+  .rate > input:checked ~ label:hover,
+  .rate > input:checked ~ label:hover ~ label,
+  .rate > label:hover ~ input:checked ~ label {
+      color: #c59b08;
+  }
+  
+.maroon {
+    background-color: #6f0c0c;
+    font-size: 25px;
+    }
+
+  
+/* Create two equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+  font-size: 50px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 455;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background: #f18f0f;
+}
+
+.titleg {
+  color: grey;
+  font-size: 18px;
+}

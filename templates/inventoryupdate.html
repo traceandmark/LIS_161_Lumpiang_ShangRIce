@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+<div class="form">
+<center>
+    <br>
+    <center><h1 class="pagetitle">Inventory Edit Dataform</h1>
+    <br>
+    <h1 class="pageh1">Edit Inventory Data</h1></center>
+    <br>
+<form action="/inv_update" method="post">
+    <input type="hidden" name="LSR_inv_id" value="{{ INV.invid }}">
+    <div class="row1">
+        <div class="column1" style="background-color: transparent;">
+            <label for="Ltype">Inventory Type:</label><br>
+            <select name="LSR_type" id="Ltype" required>
+                <option disabled selected value>Select Inventory Type</option>
+                {% if INV.type == "ingredients" %}
+                <option value="ingredients" selected>Ingredients</option>
+                <option value="packaging">Packaging</option>
+                {% elif INV.type == "packaging" %}
+                <option value="ingredients">Ingredients</option>
+                <option value="packaging" selected>Packaging</option>
+                {% endif %}
+            </select><br><br>
+            <label for="Litem">Name of the Item:</label><br>
+            <input type="text" name="LSR_item" id="Litem" required width="40%" placeholder="Enter Item" value="{{ INV.item }}"><br><br>
+            <label for="Lunit">Unit of the Item:</label><br>
+            <input type="text" name="LSR_unit" id="Lunit" value="{{ INV.unit }}" placeholder="Enter Item" required><br><br>
+        </div>
+        <div class="column1" style="background-color: transparent;">
+            <label for="Lstock">Stock Quantity:</label><br>
+            <input type="number" name="LSR_stock" id="Lstock" value="{{ INV.stock }}" min="0" required><br><br>
+            <label for="Lamount">Unit Price:</label><br>
+            <input type="number" name="LSR_amount" id="Lamount" value="{{ INV.amount }}" min="0" required><br><br>
+            <label for="Ltotal">Total Price:</label><br>
+            <input type="number" name="LSR_total" id="Ltotal" value="{{ INV.total }}" min="0" required><br><br>    
+        </div>
+    </div>
+    <label for="Ldescription">Item Description:</label> <br>
+    <textarea name="LSR_description" placeholder="Description of the item of the item" cols="56" rows="3">{{ INV.description }}</textarea><br><br>
+
+        <button class="button" onclick="myFunction()">Save</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a  href="{{ url_for('INV_LSR', LSR_inv_id=INV.invid)}}"><button class="button" onclick="myFunction()">Cancel</button></a>
+
+        <br>
+        <br>
+        <br>
+        <br>
+</form>
+</center>
+</div>
+
+{% endblock %}

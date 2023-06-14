@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/itemlist.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}"/>
+
+    
+    <style>
+
+        * {
+            color: #6f0c0c;
+        }
+    
+        .chip {
+          display: inline-block;
+          padding: 0 25px;
+          height: 50px;
+          font-size: 16px;
+          line-height: 50px;
+          border-radius: 25px;
+          background-color: #f1f1f1;
+          margin: 5px;
+        }
+        
+  
+        </style>
+        </head>
+        <body>
+            <div class ="form"></div>
+            <br>
+            <center>
+                <h1 class="pagetitle">List of Date of Sales </h1>
+            </center>
+                <br>
+                <br>
+
+
+                    {% set List = [] %}
+                    {% for d in data %}
+                        {% if d.date not in List %}
+                            <a href="/LumpiangShangRice/sales/date/{{ d.date }}">
+                                <div class="chip">
+                                    {{ d.date }}
+                                </div>
+                            </a>
+                            {{ List.append( d.date  ) }}
+                        {% endif %}
+
+                    {% endfor %}
+
+
+
+
+{% endblock %}

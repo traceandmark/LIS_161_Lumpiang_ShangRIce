@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/itemlist.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}"/>
+<div class ="form"></div>
+<br>
+<<center>
+    <h1 class="pagetitle">List of Sales: {{ flavor }} flavor</h1>
+    <br>
+    <br>
+    
+    <table>
+      <tr>
+        <th>Customer</th>
+        <th>Contact</th>
+        <th>Order Date</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Rating</th>
+        <th>Feedback</th>
+        <th>Image URl</th>
+        <th></th>
+      </tr>
+    {% for LSR in LSRs %}
+      <tr>
+        <td> <a href="/LumpiangShangRice/sales/customer/{{ LSR.customer }}">{{ LSR.customer }}</a> </td>
+        <td> {{ LSR.contact }} </td>
+        <td><a href="/LumpiangShangRice/sales/date/{{ LSR.date }}">{{ LSR.date }}</a> </td>
+        <td> {{ LSR.quantity }} </td>
+        <td> {{ LSR.price }} </td>
+        <td>  <a href="/LumpiangShangRice/sales/rate/{{ LSR.rate }}">{{ LSR.rate }}</a> </td>
+        <td> {{ LSR.feedback }} </a></td>
+        <td> {{ LSR.url }} </td>
+        <td>     <a href="/LumpiangShangRice/{{ LSR.id }}"> View  </a></td>
+    
+      </tr>
+    
+    {% endfor %}
+    </table>
+    <br>
+    <br>
+    <a class="normalref" href="{{ url_for('sales_database') }}"><button class="button" onclick="myFunction()">Back to Sales Database</button></a>
+  </center>
+    <br>
+    <br>
+    <center>
+        <br>
+        <h1 class="pageh1">Sales Database per Flavor</h1></center>
+        <br>
+        <br>
+        <div class="responsive">
+          <div class="gallery">
+              <a href="/LumpiangShangRice/sales/classic">
+              <img src="{{ url_for('static', filename='images/classic.png') }}" alt="Classic" width="600" height="400">
+              </a>
+              <div class="desc">Classic Lumpiang ShangRice</div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+              <a href="/LumpiangShangRice/sales/cheesy">
+              <img src="{{ url_for('static', filename='images/cheesy.png') }}" alt="Cheesy" width="600" height="400">
+              </a>
+              <div class="desc">Cheesy  Lumpiang ShangRice</div>
+          </div>
+        </div>
+        
+        <div class="responsive">
+          <div class="gallery">
+            <a href="/LumpiangShangRice/sales/spicy">
+              <img src="{{ url_for('static', filename='images/spicy.png') }}" alt="Spicy" width="600" height="400">
+            </a>
+            <div class="desc">Spicy  Lumpiang ShangRice</div>
+          </div>
+        </div>
+        
+        <div class="responsive">
+          <div class="gallery">
+            <a href="/LumpiangShangRice/sales/spicy-cheesy">
+              <img src="{{ url_for('static', filename='images/spicy-cheesy.png') }}" alt="Spicy-Cheesy" width="600" height="400">
+            </a>
+            <div class="desc">Spicy-Cheesy Lumpiang ShangRice</div>
+          </div>
+        </div>
+        
+        <div class="clearfix"></div>
+        <br>
+        </div>
+        </center>
+    <br>
+
+
+
+{% endblock %}

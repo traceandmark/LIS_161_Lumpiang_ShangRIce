@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+<head> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title> {% block title %} Lumpiang ShangRice {% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/logo.png')}}">
+
+</head>
+
+<body>
+    <link rel="stylesheet" href="static\css\base.css" >
+<div class="nav">
+            <div class="header">
+            <div class="fix"><a href="{{ url_for('index') }}"><img src = "{{ url_for('static', filename='images/logo.png') }}" width = "81" height="81"></a></div>
+            <div class="Bname"><h1 class="titlestyle">  &nbsp;&nbsp  Lumpiang ShangRice </h1> </div>
+            </div>
+    <div class="right">
+        <ul id="menu">
+            <li class="parent"><a href="/LumpiangShangRice/sales">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Sales&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <ul class="child">
+                  <div class="vertical">
+                  <li class="parent"><a href="/LumpiangShangRice/flavor" style="color: white;">Flavors <span class="expand">»</span></a>
+                    <ul class="child">
+                      <li></li>
+                        <li><a href="/LumpiangShangRice/sales/classic" style="color: white;">&nbsp;Classic&nbsp;</a></li>
+                        <li><a href="/LumpiangShangRice/sales/cheesy" style="color: white;">&nbsp;Cheesy&nbsp;</a></li>
+                        <li><a href="/LumpiangShangRice/sales/spicy" style="color: white;">&nbsp;Spicy&nbsp;</a></li>
+                        <li><a href="/LumpiangShangRice/sales/spicy-cheesy" style="color: white;">Spicy-Cheesy</a></li>
+
+                    </ul>
+                 <li><a href="/LumpiangShangRice/date" style="color: white;">&nbsp;Date&nbsp;&nbsp;</span></a></li>
+                 <li><a href="/LumpiangShangRice/rate" style="color: white;">&nbsp;Rate&nbsp;&nbsp;</a></li>
+                 <li><a href="/LumpiangShangRice/customer" style="color: white;">&nbsp;Customer&nbsp;&nbsp; </a></li>
+                  </li>
+                </ul>
+            <li class="parent"><a href="/LumpiangShangRice/inventory">  &nbsp;Inventory &nbsp;</a>
+                <ul class="child">
+                  <a href="/LumpiangShangRice/inventory/ingredients">Ingredients</a>
+                  <a href="/LumpiangShangRice/inventory/packaging">Packaging </a>
+                </ul>
+            </li>
+            <li class="parent"><a href="#"> &nbsp;Dataforms</a>
+                <ul class="child">
+                    <a href="/LumpiangShangRice/form/sales">&nbsp;Sales&nbsp;</a>
+                    <a href="/LumpiangShangRice/form/inventory">&nbsp;Inventory&nbsp;</a>
+                </ul>
+            </li>
+            <li class="parent">
+                <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <a href="{{ url_for('index') }}">Home</a>
+                  <a href="{{ url_for('sales_database') }}">Sales</a>
+                  <div class="dropdown-btn">Sales per Flavors
+                  </div></a>
+                  <div class="dropdown-container">
+                    <a href="/LumpiangShangRice/sales/classic">↠ Classic</a>
+                    <a href="/LumpiangShangRice/sales/cheesy">↠ Cheesy</a>
+                    <a href="/LumpiangShangRice/sales/spicy">↠ Spicy</a>
+                    <a href="/LumpiangShangRice/sales/spicy-cheesy">↠ Spicy-Cheesy</a>
+                  </div>
+                  <a href="{{ url_for('inventory_database') }}">Inventory</a>
+                  <div class="dropdown-btn">Types of Inventory 
+                  </div></a>
+                  <div class="dropdown-container">
+                    <a href="/LumpiangShangRice/inventory/ingredients">↠ Ingredients</a>
+                    <a href="/LumpiangShangRice/inventory/packaging">↠ Packaging</a>
+                  </div>
+                  <div class="dropdown-btn">Dataforms
+                  </div></a>
+                  <div class="dropdown-container">
+                    <a href="/LumpiangShangRice/form/sales">↠ Sales</a>
+                    <a href="/LumpiangShangRice/form/inventory">↠ Inventory</a>
+                  </div>
+                  <a href="/LumpiangShangRice/menu">Menu Guide</a>
+                </div>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&nbsp;&nbsp &#9776; &nbsp;Menu&nbsp;&nbsp;</span>                
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% block content %} {% endblock %}
+
+
+</body>     
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  
+  /* Loop through all dropdown divs to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+  
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+  </script>
+
+</html>

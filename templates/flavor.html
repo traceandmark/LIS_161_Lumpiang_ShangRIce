@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/itemlist.css')}}"/>
+
+<div class ="form"></div>
+<center>
+<br>
+<h1 class="pagetitle">Sales Database per Flavor</h1></center>
+<br>
+<br>
+<div class="responsive">
+  <div class="gallery">
+      <a href="/LumpiangShangRice/sales/classic">
+      <img src="{{ url_for('static', filename='images/classic.png') }}" alt="Classic" width="600" height="400">
+      </a>
+      <div class="desc">Classic Lumpiang ShangRice</div>
+  </div>
+</div>
+<div class="responsive">
+  <div class="gallery">
+      <a href="/LumpiangShangRice/sales/cheesy">
+      <img src="{{ url_for('static', filename='images/cheesy.png') }}" alt="Cheesy" width="600" height="400">
+      </a>
+      <div class="desc">Cheesy  Lumpiang ShangRice</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="/LumpiangShangRice/sales/spicy">
+      <img src="{{ url_for('static', filename='images/spicy.png') }}" alt="Spicy" width="600" height="400">
+    </a>
+    <div class="desc">Spicy  Lumpiang ShangRice</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="/LumpiangShangRice/sales/spicy-cheesy">
+      <img src="{{ url_for('static', filename='images/spicy-cheesy.png') }}" alt="Spicy-Cheesy" width="600" height="400">
+    </a>
+    <div class="desc">Spicy-Cheesy Lumpiang ShangRice</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+<br>
+</div>
+</center>
+{% endblock %}

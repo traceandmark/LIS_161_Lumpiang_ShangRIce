@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+
+<div class ="form">
+    <br>
+    <center><h1 class="pagetitle">Inventory Dataform</h1>
+    <br>
+    <h1 class="pageh1">Enter Inventory Data</h1>
+    <br>
+<form action="{{ url_for('inv_processing') }}" method="post">
+    <div class="row1">
+        <div class="column1" style="background-color: transparent;">
+            <label for="Ltype">Inventory Type:</label><br>
+            <select name="LSR_type" id="Ltype" required>
+                <option disabled selected value>Select Inventory Type</option>
+                <option value="ingredients">Ingredients</option>
+                <option value="packaging">Packaging</option>
+            </select><br><br>
+            <label for="Litem">Name of the Item:</label><br>
+            <input type="text" name="LSR_item" id="Litem" required width="40%" placeholder="Enter Item"><br><br>
+            <label for="Lunit">Unit of the Item:</label><br>
+            <input type="text" name="LSR_unit" id="Lunit" placeholder="Enter Unit"><br><br>
+        </div>
+        <div class="column1" style="background-color: transparent;">
+            <label for="Lstock">Stock Quantity:</label> <br>
+            <input type="number" name="LSR_stock" id="Lstock" value="0" min="0" required><br><br>  
+            <label for="Lamount">Unit Price</label><br>
+            <input type="number" name="LSR_amount" id="Lamount" value="0" min="0" required><br><br>
+            <label for="Ltotal">Total Price:</label><br>
+            <input type="number" name="LSR_total" id="Ltotal" value="0" min="0" required><br><br> 
+        </div>
+    </div>
+            <label for="Ldescription">Item Description:</label><br>
+            <textarea name="LSR_description" placeholder="Description of the item" cols="56" rows="3"></textarea><br><br>
+
+            <button class="button" onclick="myFunction()">Save</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{{ url_for('index')}}">  <button class="button" onclick="myFunction()"> Home</button>
+
+            <br>
+            <br>
+</form>
+</center>
+
+</div>
+
+{% endblock %}

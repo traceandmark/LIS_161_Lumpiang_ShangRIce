@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+<div class="form">
+<center>
+    <br>
+    <center><h1 class="pagetitle">Sales Edit Dataform</h1>
+    <br>
+    <h1 class="pageh1">Edit Sales Data</h1></center>
+    <br>
+<form action="{{ url_for('update') }}" method="post">
+    <input type="hidden" name="LSR_id" value="{{ LSR.id }}">
+    <div class="row1">
+        <div class="column1" style="background-color: transparent;">
+            <label for="LFlavor">Flavor:</label><br>
+            <select name="LSR_flavor" id="LFlavor" required>
+                <option disabled selected value>Choose Flavor</option>
+                {% if LSR.flavor == "classic" %}
+                <option value="classic" selected>Classic</option>
+                <option value="cheesy">Cheesy</option>
+                <option value="spicy">Spicy</option>
+                <option value="spicy-cheesy">Spicy-Cheesy</option>
+                {% elif LSR.flavor == "cheesy" %}
+                <option value="classic">Classic</option>
+                <option value="cheesy" selected>Cheesy</option>
+                <option value="spicy">Spicy</option>
+                <option value="spicy-cheesy">Spicy-Cheesy</option>
+                {% elif LSR.flavor == "spicy" %}
+                <option value="classic">Classic</option>
+                <option value="cheesy">Cheesy</option>
+                <option value="spicy" selected>Spicy</option>
+                <option value="spicy-cheesy">Spicy-Cheesy</option>
+                {% elif LSR.flavor == "spicy-cheesy" %}
+                <option value="classic">Classic</option>
+                <option value="cheesy">Cheesy</option>
+                <option value="spicy">Spicy</option>
+                <option value="spicy-cheesy" selected>Spicy-Cheesy</option>
+                {% endif %}
+            </select><br><br>
+            <label for="Lcustomer">Customer:</label><br>
+            <input type="text" name="LSR_customer" id="Lcustomer" value="{{ LSR.customer }}" required width="40%" placeholder="Enter Name"><br><br>
+            <label for="Lcontact">Contact Number:</label><br>
+            <input type="tel" id="Lcontact" name="LSR_contact" placeholder="09123456789" value="{{ LSR.contact }}" required><br><br>
+            <label for="Lurl">Image URL:</label><br>
+            <input type="url" name="LSR_url" id="L_url" placeholder="Enter URL" value="{{ LSR.url }}"><br><br>
+        </div>
+        <div class="column1" style="background-color: transparent;">
+            <label for="Ldate">Date:</label><br>
+            <input type="date" id="Ldate" name="LSR_date" value="{{ LSR.date }}" required><br><br>
+            <label for="Lquantity">Quantity:</label><br>
+            <input type="number" name="LSR_quantity" id="Lquantity" value="{{ LSR.quantity }}" min="0"><br><br>
+            <label for="Lprice">Total Price:</label><br>
+            <input type="number" name="LSR_price" id="Lprice" value="{{ LSR.price }}" min="0"  step="5"><br><br>
+            <label for="Lrate">Rating:</label><br>
+            <input type="number" name="LSR_rate" id="Lrate" value="{{ LSR.rate }}" min="1" max="10"><br><br>
+        </div>
+    </div>
+    <label for="Lfeedback">Feedback/Suggestion:</label><br>
+    <textarea name="LSR_feedback" placeholder="Feedback/Suggestion from the customer" cols="70" rows="2">{{ LSR.feedback }}</textarea><br><br>
+    <button class="button" onclick="myFunction()">Save</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a  href="{{ url_for('LSR', LSR_id=LSR.id)}}"><button class="button" onclick="myFunction()">Cancel</button></a>
+
+    <br>
+    <br>
+</form>
+</center>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/itemlist.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}"/>
+
+    
+    <style>
+    * {
+        color: #6f0c0c;
+    }
+        .chip {
+          display: inline-block;
+          padding: 0 25px;
+          height: 50px;
+          font-size: 16px;
+          line-height: 50px;
+          border-radius: 25px;
+          background-color: #f1f1f1;
+          margin: 5px;
+        }
+        
+        .chip img {
+          margin: 0 10px 0 -25px;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+        }
+    </style>
+    
+        </head>
+        <body>
+            <div class ="form"></div>
+            <br>
+            <center>
+                <h1 class="pagetitle">List of Customer Sales</h1>
+            </center>
+                <br>
+                <br>
+
+
+                    {% set myList = [] %}
+                    {% for d in data %}
+                        {% if d.customer not in myList %}
+                            <a href="/LumpiangShangRice/sales/customer/{{ d.customer }}">
+                                <div class="chip">
+                                    <img src="{{ d.url }}" alt="Person" width="96" height="96">
+                                    {{ d.customer }}
+                                </div>
+                            </a>
+                            {{ myList.append( d.customer ) }}
+                        {% endif %}
+
+                    {% endfor %}
+
+
+
+
+{% endblock %}
